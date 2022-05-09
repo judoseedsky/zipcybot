@@ -1,3 +1,3 @@
-const T = require(`./config`);
+const T = require(`./config.js`);
 
 console.log("Bot starting...");
