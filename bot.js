@@ -1,5 +1,5 @@
 import T from './confiig.js';
-import client from './opensea.js'
+import client from './opensea.js';
 
 console.log("Bot started");
 
