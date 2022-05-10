@@ -8,7 +8,7 @@
   "name": "zipcybot",
   "type": "module",
   "version": "1.0.0",
-  "main": "bot.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
