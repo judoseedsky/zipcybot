@@ -1,10 +1,15 @@
-const { TwitterApi } = require('twitter-api-v2');
+import { TwitterApi } from 'twitter-api-v2';
 
-const T = new TwitterApi({
-    appKey: 'QRHcwOZuh9y3nWpHGFrphs2sn',
-    appSecret: process.env.APP_SECRET,
-    accessToken: '1523644773063696387-ABC2SI4wy72N3eEsrWpXk2r8SeO72S',
-    accessSecret: process.env.ACCESS_SECRET,
+const key = process.env.APP_SECRET;
+const access = process.env.ACCESS_SECRET; 
+
+const client = new TwitterApi({
+    appKey: 'F95hGeEWzEzOfpFhT7cO03O1E',
+    appSecret: 'VAq2jriMbPBRGbOFkmGEI4ZRmQrpgBY5pFpVEy0c3mKD14wMPl',
+    accessToken: '1523644773063696387-DCv5jo8FK7Jp6JUQeghs8NyAQCYIqz',
+    accessSecret: 'aKlLtlaf90OP7g1Dth2CkiWYxiq9BOR5vOCJRlgRbjqlW',
 });
 
-module.exports = T;
+const T = client.readWrite;
+
+export default T;
