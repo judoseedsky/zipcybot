@@ -21,13 +21,3 @@ client.onItemSold("supernormalbyzipcy", (event) => {
   const tweetStr = `${name} bought for ${eth_price}Ξ ($${usd_price}) #NFTs ${metadata_url}`;
   tweet(tweetStr);
 });
-
-// OpenSea listener
-// client.onEvents('supernormalbyzipcy', [EventType.ITEM_RECEIVED_OFFER, EventType.ITEM_TRANSFERRED], (event) => {
-//   // handle event
-//   console.log(event)
-//   const { eth_price, usd_price } = event.payload.payment_token;
-//   const { name, metadata_url } = event.payload;
-//   const tweetStr = `${name} bought for ${eth_price}Ξ ($${usd_price}) #NFTs ${metadata_url}`;
-//   tweet(tweetStr)
-// });
