@@ -16,8 +16,8 @@ client.onItemSold("supernormalbyzipcy", (event) => {
   // Handle event
   console.log(event); // log event
   console.log(event.payload.item); // log item sold
-  const { name, metadata_url } = event.payload.item.metadata; // take metadata from item sold (destructer info from it)
+  const { name, image } = event.payload.item.metadata; // take metadata from item sold (destructer info from it)
   const { eth_price, usd_price } = event.payload.payment_token; // take price from payment info response
-  const tweetStr = `${name} bought for ${eth_price}Ξ ($${usd_price}) #NFTs ${metadata_url}`; // string together info
+  const tweetStr = `${name} bought for ${eth_price}Ξ ($${usd_price}) #NFTs ${image}`; // string together info
   tweet(tweetStr); // tweet out our string
 });
