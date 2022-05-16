@@ -17,9 +17,9 @@ client.onItemSold("supernormalbyzipcy", (event) => {
   console.log(event); // log event
   console.log(event.payload.item); // log item sold
   const { name, image } = event.payload.item.metadata; // take metadata from item sold (destructer info from it)
-  const { eth_price, usd_price } = event.payload.payment_token; // take price from payment info response
-  eth_price = eth_price.slice(0, (eth_price.indexOf("."))+3); // make Eth price string truncate to 2 decimal places
-  usd_price = usd_price.slice(0, (usd_price.indexOf("."))+3); // make Eth price string truncate to 2 decimal places
-  const tweetStr = `${name} bought for ${eth_price}Ξ ($${usd_price}) #NFTs ${image}`; // string together info
+  const { eth_price, usd_price } = event.payload.payment_token; // take prices from payment info response
+  const eth = eth_price.slice(0, (eth_price.indexOf("."))+3); // make ETH price string truncate to 2 decimal places
+  const usd = usd_price.slice(0, (usd_price.indexOf("."))+3); // make ETH price string truncate to 2 decimal places
+  const tweetStr = `${name} bought for ${eth}Ξ ($${usd}) #NFTs ${image}`; // string together info
   tweet(tweetStr); // tweet out our string
 });

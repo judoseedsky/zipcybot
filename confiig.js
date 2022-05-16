@@ -1,8 +1,5 @@
 import { TwitterApi } from 'twitter-api-v2';
 
-const key = process.env.APP_SECRET;
-const access = process.env.ACCESS_SECRET; 
-
 const client = new TwitterApi({
     appKey: 'F95hGeEWzEzOfpFhT7cO03O1E',
     appSecret: 'VAq2jriMbPBRGbOFkmGEI4ZRmQrpgBY5pFpVEy0c3mKD14wMPl',
