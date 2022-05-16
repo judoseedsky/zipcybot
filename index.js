@@ -34,7 +34,7 @@ client.onItemSold("supernormalbyzipcy", (event) => {
   const usd = usd_price.slice(0, (usd_price.indexOf("."))+3);
 
   // Creat image link from name
-  const imageNum = name.slice(5);
+  const imageNum = name.slice(6);
   console.log("imageNum" + imageNum)
 
   // string together info
