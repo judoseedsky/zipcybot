@@ -35,6 +35,7 @@ client.onItemSold("supernormalbyzipcy", (event) => {
 
   // Creat image link from name
   const imageNum = name.slice(5);
+  console.log("imageNum" + imageNum)
 
   // string together info
   const tweetStr = `${name} bought for ${eth}Ξ ($${usd}) https://opensea.io/assets/0xd532b88607b1877fe20c181cba2550e3bbd6b31c/${imageNum}`; 
