@@ -13,13 +13,32 @@ console.log('listening for sales...');
 
 // OpenSea listener
 client.onItemSold("supernormalbyzipcy", (event) => {
-  // Handle event
-  console.log(event); // log event
-  console.log(event.payload.item); // log item sold
-  const { name, image } = event.payload.item.metadata; // take metadata from item sold (destructer info from it)
-  const { eth_price, usd_price } = event.payload.payment_token; // take prices from payment info response
-  const eth = eth_price.slice(0, (eth_price.indexOf("."))+3); // make ETH price string truncate to 2 decimal places
-  const usd = usd_price.slice(0, (usd_price.indexOf("."))+3); // make ETH price string truncate to 2 decimal places
-  const tweetStr = `${name} bought for ${eth}Ξ ($${usd}) #NFTs ${image}`; // string together info
-  tweet(tweetStr); // tweet out our string
+  // Handle Event below
+
+  // log event
+  console.log(event); 
+
+  // log item sold
+  console.log(event.payload.item);
+
+  // Take metadata from item sold (destructer info from it)
+  const { name, image } = event.payload.item.metadata; 
+
+  // Take prices from payment info response
+  const { eth_price, usd_price } = event.payload.payment_token;
+
+  // Make ETH price string truncate to 2 decimal places
+  const eth = eth_price.slice(0, (eth_price.indexOf("."))+3); 
+
+  // Make ETH price string truncate to 2 decimal places
+  const usd = usd_price.slice(0, (usd_price.indexOf("."))+3);
+
+  // Creat image link from name
+  const imageNum = name.slice(5);
+
+  // string together info
+  const tweetStr = `${name} bought for ${eth}Ξ ($${usd}) #NFTs https://opensea.io/assets/0xd532b88607b1877fe20c181cba2550e3bbd6b31c/${imageNum}`; 
+
+  // Tweet out our string
+  tweet(tweetStr); 
 });
